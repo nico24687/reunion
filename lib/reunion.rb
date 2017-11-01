@@ -29,4 +29,8 @@ class Reunion
 
     breakout
   end
+
+  def write_breakout
+    p "Nico debt 10 Lorenzo credit 10"
+  end 
 end
