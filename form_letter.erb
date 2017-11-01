@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1 align = "center">Reunion</h1>
+    <% @activities.each do |activity| %>
+    <ul>
+      <li>The activity is <%= activity.name %></li>
+      <li>The activity participants are <%=activity.participants.keys %></li>
+      <li>The total cost of the activity is <%=activity.total_cost %></li>
+      <li>You each should pay <%=activity.split %></li>
+    </ul>
+    <% end %>
+  </body>
+</html>

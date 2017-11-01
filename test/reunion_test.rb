@@ -4,6 +4,7 @@ require 'minitest/autorun'
 require './lib/reunion'
 require './lib/activity'
 require 'pry'
+require 'erb'
 
 class ReunionTest < Minitest::Test
   def test_reunion_has_location 
