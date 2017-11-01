@@ -25,4 +25,15 @@ class ReunionTest < Minitest::Test
     reunion.add_activity(hiking)
     assert_equal [hiking], reunion.activities
   end
+
+  def test_can_evaluate_total_cost_of_reunion
+    reunion = Reunion.new("London")
+    hiking = Activity.new("hiking")
+    hiking.add_participant("Nico",10)
+    hiking.add_participant("Lorenzo",20)
+
+    reunion.add_activity(hiking)
+    
+    assert_equal 30, reunion.total_cost
+  end
 end
