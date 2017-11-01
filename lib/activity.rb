@@ -16,4 +16,11 @@ class Activity
   def split
     total_cost / participants.count
   end
+
+  def owe
+    @participants.merge(@participants) do |key, value|
+      split - value
+    end
+  end
+  
 end

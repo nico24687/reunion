@@ -49,6 +49,14 @@ class ActivityTest < Minitest::Test
     assert_equal 15, activity.split
   end
 
+  def test_can_calculate_amount_owed
+    activity = Activity.new("hiking")
+    activity.add_participant("Nico", 10)
+    activity.add_participant("Lorenzo", 20)
+
+    assert_equal({"Nico" => 5, "Lorenzo" => -5}, activity.owe)
+  end
+
 
 
 end
