@@ -17,4 +17,13 @@ class ActivityTest < Minitest::Test
   
     assert_equal({}, activity.participants)
   end
+
+  def test_activity_can_add_participant 
+    activity = Activity.new("hiking")
+    activity.add_participant("Nico", 10)
+
+    assert_equal({"Nico" => 10}, activity.participants)
+  end 
+
+
 end
