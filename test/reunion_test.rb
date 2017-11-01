@@ -36,4 +36,19 @@ class ReunionTest < Minitest::Test
     
     assert_equal 30, reunion.total_cost
   end
+
+  def test_can_calculate_breakout_from_reunion
+    reunion = Reunion.new("London")
+    hiking = Activity.new("hiking")
+    drinks = Activity.new("drinks")
+    hiking.add_participant("Nico",10)
+    hiking.add_participant("Lorenzo",20)
+    drinks.add_participant("Nico",10)
+    drinks.add_participant("Lorenzo",20)
+
+    reunion.add_activity(hiking)
+    reunion.add_activity(drinks)
+    binding.pry
+    assert_equal({"Nico"=>10, "Lorenzo"=>-10},reunion.breakout)
+  end
 end

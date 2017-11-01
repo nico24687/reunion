@@ -14,4 +14,19 @@ class Reunion
       activity.total_cost
     end.sum
   end 
+
+  def breakout 
+    total_owed = @activities.map do |activity|
+      activity.owe
+    end
+
+    breakout = {}
+    total_owed.each do |current_owed|
+      breakout.merge!(current_owed) do |key, old_value, new_value|
+        breakout[key] = old_value + new_value
+      end
+    end
+
+    breakout
+  end
 end
