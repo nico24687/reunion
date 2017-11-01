@@ -8,4 +8,8 @@ class Activity
   def add_participant(name,value)
     participants[name] = value
   end
+
+  def total_cost
+    participants.values.sum
+  end
 end
